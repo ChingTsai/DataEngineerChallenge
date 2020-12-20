@@ -14,6 +14,7 @@ libraryDependencies += "org.apache.hadoop" % "hadoop-aws" % "2.8.3" % "provided"
 
 libraryDependencies += "org.rogach" %% "scallop" % "2.0.5"
 
+libraryDependencies += "nl.basjes.parse.useragent" % "yauaa" % "5.21"
 
 fork := true
 
