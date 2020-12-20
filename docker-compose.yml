@@ -1,0 +1,20 @@
+version: '3.5'
+
+networks:
+  default:
+    name: spark_cluster
+    driver: bridge
+
+services:
+  spark-master:
+    image: bde2020/spark-master:2.4.4-hadoop2.7
+    volumes:
+      - ./dist:/spark/applications
+      - ./data:/input
+      - ./out:/out
+    ports:
+      - '8080:8080'
+      - '7077:7077'
+      - '4040:4040'
+    environment:
+      - INIT_DAEMON_STEP=setup_spark
